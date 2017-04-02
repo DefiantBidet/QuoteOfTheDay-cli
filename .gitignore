@@ -1,0 +1,26 @@
+# .DS_Store files need to get intimate with a Sarlac Pit
+.DS_Store
+
+# Sublime Jank
+.proj
+.proj/*
+# *.TODO
+
+# Node Jank
+node_modules
+
+# Enviornment Vars
+.env
+*.env
+
+# Its Log. Its Log. its big; its heavy; its wood.
+logs
+*.log
+# Its Log. Its Log. its better than bad its good.
+
+# coverage reports
+.nyc_output
+coverage/*
+
+#npm jank
+.npmrc

@@ -1,0 +1,29 @@
+{
+  "name": "qotd",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "James Dean \"DefiantBidet\"",
+  "main": "index.js",
+  "description": "outputs a quote of the day in your shell.",
+  "keywords": [
+    "quote",
+    "qotd",
+    "cli"
+  ],
+  "scripts": {
+    "test": "ava",
+    "test:watch": "ava -w"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3"
+  },
+  "ava": {
+    "files": [
+      "*.spec.js",
+      "**/*.spec.js"
+    ]
+  }
+}
