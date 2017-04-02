@@ -1,0 +1,40 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+      "key-spacing": [
+        "error",
+        {
+          "align": "value"
+        }
+      ],
+      "no-multi-spaces": [
+        "error",
+        {
+          "exceptions": {
+            "Property": true,
+            "ImportDeclaration": true,
+            "VariableDeclarator": true
+          }
+        }
+      ],
+      "no-use-before-define": [
+        "error",
+        {
+          "functions": false,
+          "classes": true
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.js",
+            "!**/*.spec.js"
+          ]
+        }
+      ]
+    }
+}
