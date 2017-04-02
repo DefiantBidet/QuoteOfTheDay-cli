@@ -1,4 +1,6 @@
 QOTD TODO
+a Todo file to keep track of the things outstanding from this idea
+project.
 
 Application Flow:
   ☐ check if connected to internet
@@ -24,6 +26,7 @@ Application Scaffolding:
   ✔ add readme @done (17-04-02 17:15)
   ✔ add license @done (17-04-02 17:10)
   ✔ init npm @done (17-04-02 17:15)
+  ✔ git strategy? (master/develop/feature) @done (17-04-02 17:28)
 
 Application Management:
   ☐ add tests
@@ -35,4 +38,3 @@ Application Management:
   ☐ add tests
   ☐ add coverage
   ☐ implement CI/CD
-  ☐ git strategy? (master/develop/feature)
