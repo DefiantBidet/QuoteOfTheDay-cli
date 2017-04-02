@@ -33,3 +33,6 @@ Application Management:
   ☐ add tests
   ☐ add tests
   ☐ add tests
+  ☐ add coverage
+  ☐ implement CI/CD
+  ☐ git strategy? (master/develop/feature)
