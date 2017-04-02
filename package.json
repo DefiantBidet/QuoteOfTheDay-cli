@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "author": "James Dean \"DefiantBidet\"",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "description": "outputs a quote of the day in your shell.",
   "keywords": [
     "quote",
@@ -14,6 +14,20 @@
     "test": "ava",
     "test:watch": "ava -w"
   },
+  "ava": {
+    "files": [
+      "*.spec.js",
+      "**/*.spec.js"
+    ]
+  },
+  "bin": {
+    "qotd": "./lib/cli.js"
+  },
+  "files": [
+    "./lib/index.js",
+    "./lib/cli.js",
+    "./lib/quotes.json"
+  ],
   "devDependencies": {
     "ava": "^0.18.2",
     "eslint": "^3.19.0",
@@ -22,11 +36,5 @@
   },
   "dependencies": {
     "chalk": "^1.1.3"
-  },
-  "ava": {
-    "files": [
-      "*.spec.js",
-      "**/*.spec.js"
-    ]
   }
 }

@@ -1,0 +1,35 @@
+QOTD TODO
+
+Application Flow:
+  ☐ check if connected to internet
+
+    If Connected:
+      ☐ make call to qotd api somewhere
+      ☐ parse response as entry
+      ☐ choose random entry in json to remove
+      ☐ update json with new entry
+
+    If Not Connected:
+      ☐ select entry local json file
+
+  ☐ output entry to shell
+
+Application Scaffolding:
+  ✔ create directory structure @done (17-04-02 17:15)
+  ✔ touch file stubs @done (17-04-02 17:16)
+  ✔ add git @done (17-04-02 17:15)
+  ✔ add gitignore @done (17-04-02 17:15)
+  ✔ add linting rules @done (17-04-02 17:15)
+  ✔ add editor config rules @done (17-04-02 17:15)
+  ✔ add readme @done (17-04-02 17:15)
+  ✔ add license @done (17-04-02 17:10)
+  ✔ init npm @done (17-04-02 17:15)
+
+Application Management:
+  ☐ add tests
+  ☐ update readme
+  ☐ add tests
+  ☐ add quotes
+  ☐ add tests
+  ☐ add tests
+  ☐ add tests
