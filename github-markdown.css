@@ -1,0 +1,20 @@
+
+.markdown-body {
+    box-sizing: border-box;
+    width: 65em;
+    margin: 0 auto;
+}
+
+.smallFont {
+    font-size: .85em;
+    font-style: italic;
+    margin-bottom: 0px !important;
+    position: relative;
+    top: 47px;
+    left: 300px;
+}
+
+img[alt=FlowChart] {
+    width: 986px;
+    height: 787px;
+}

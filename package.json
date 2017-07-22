@@ -1,9 +1,9 @@
 {
   "name": "qotd",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "James Dean \"DefiantBidet\"",
-  "main": "./lib/index.js",
+  "main": "./lib/cli.js",
   "description": "outputs a quote of the day in your shell.",
   "keywords": [
     "quote",
@@ -11,8 +11,10 @@
     "cli"
   ],
   "scripts": {
-    "test": "ava",
-    "test:watch": "ava -w"
+    "test": "NODE_ENV=test ava -v",
+    "test:watch": "NODE_ENV=test ava -wv",
+    "coverage": "NODE_ENV=test nyc --reporter=lcov npm test",
+    "covReport": "nyc report"
   },
   "ava": {
     "files": [
@@ -32,9 +34,18 @@
     "ava": "^0.18.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.2",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "mock-require": "^2.0.2",
+    "nock": "^9.0.13",
+    "nyc": "^10.2.0",
+    "proxyquire": "^1.7.11",
+    "sinon": "^2.1.0"
   },
   "dependencies": {
-    "chalk": "^1.1.3"
+    "chalk": "^1.1.3",
+    "cli-spinners": "^1.0.0",
+    "is-online": "^7.0.0",
+    "ora": "^1.2.0",
+    "yargs": "^7.1.0"
   }
 }

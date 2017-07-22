@@ -1,0 +1,11 @@
+curl -d "format=json&lang=en&method=getQuote" -X POST  http://api.forismatic.com/api/1.0/ | jq .
+
+{
+  "quoteText": "The one who always loses, is the only person who gets the reward. ",
+  "quoteAuthor": "Claire Charmont ",
+  "senderName": "",
+  "senderLink": "",
+  "quoteLink": "http://forismatic.com/en/692c0fea3e/"
+}
+
+

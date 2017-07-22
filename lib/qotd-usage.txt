@@ -1,0 +1,91 @@
+Usage:
+    qotd [options]
+
+Outputs a Quote of the Day to shell.
+
+There are a few options to configure qotd. Generally
+speaking, however, qotd has two modes - online and offline.
+
+
+Online Mode:
+
+By default, qotd will check for internet connectivity. If
+no connection is found, qotd will fall back to offline mode.
+If a connection is found, qotd will fetch a quote from a
+public API. If, for some reason, this request fails - qotd
+will fall back to offline mode. Otherwise, qotd will output
+the quote to the shell and determine how to save the quote
+to the local data store.
+
+Storing:
+
+There are predefined quotes supplied with qotd, and a
+maximum number of quotes to hold. This can be changed
+via settings. When determining how to store the current
+quote in the data store, qotd will compare the current
+length of quotes stored against the maximum setting.
+
+If the length of the quotes is over the maximum setting,
+qotd will insert the quote at a random index from 0 to the
+maximum setting (inclusive) - then qotd will prune the
+list of quotes to the maximum setting.
+
+If the length of the quotes is equal to the maximum
+setting, qotd will replace a quote in the current list
+with the current quote.
+
+If the length of the quotes is less than the maximum
+setting, qotd will insert the quote at a random index
+from 0 to the length of the existing quotes list
+(inlusive).
+
+Offline Mode:
+
+When running in offline mode, qotd makes no attempt to
+load a quote from the internet, nor store a quote in the
+local data store. Offline mode simply fetches a quote from
+the existing data store and outputs it to the shell.
+
+
+Options:
+
+    -h, ?, --help               output usage information
+    -v, --version               output version number
+    -m, --max                   supplying a boolean to
+                                max outputs the current
+                                length and max of the
+                                data store
+    -m, --max=<max>             specify upper limit of
+                                quotes to hold in local
+                                data store
+    -q, --quote-color=<color>   specify the color of the
+                                quote output
+    -a, --author-color=<color>  specify the color of the
+                                author output
+    -C, --no-colors             disable color output
+    -x, --offline               skip connection check
+                                load from local data store
+
+Settings:
+
+  Max:
+  Outputs current length/max to shell or updates the data
+  store.
+
+  Quote Color:
+  Changes the color of the output to the supplied value.
+  NOTE: qotd uses Chalk
+  Therefore, valid names are chalk names and styles.
+  (e.g. bold.blue)
+
+  Author Color:
+  Changes the color of the output to the supplied value.
+  NOTE: qotd uses Chalk
+  Therefore, valid names are chalk names and styles.
+  (e.g. bold.blue)
+
+  No Colors:
+  Removes colorized output.
+
+  Offline:
+  Local only
