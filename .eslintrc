@@ -1,40 +1,47 @@
 {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "key-spacing": [
+      "error",
+      {
+        "align": "value"
+      }
     ],
-    "rules": {
-      "key-spacing": [
-        "error",
-        {
-          "align": "value"
+    "no-multi-spaces": [
+      "error",
+      {
+        "exceptions": {
+          "Property": true,
+          "ImportDeclaration": true,
+          "VariableDeclarator": true
         }
-      ],
-      "no-multi-spaces": [
-        "error",
-        {
-          "exceptions": {
-            "Property": true,
-            "ImportDeclaration": true,
-            "VariableDeclarator": true
-          }
-        }
-      ],
-      "no-use-before-define": [
-        "error",
-        {
-          "functions": false,
-          "classes": true
-        }
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "**/*.js",
-            "!**/*.spec.js"
-          ]
-        }
-      ]
-    }
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true
+      }
+    ],
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "exceptions": ["*"]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.js",
+          "!**/*.spec.js"
+        ]
+      }
+    ]
+  }
 }

@@ -2,19 +2,28 @@ QOTD TODO
 a Todo file to keep track of the things outstanding from this idea
 project.
 
+Blocking:
+ ✔ JSON gets deleted! @critical @done (17-07-22 17:35)
+ ☐ end 2 end / functional tests @high
+ ☐ untested lines in qotd.js @low
+   ☐ error of http.responseClient
+   ☐ writestream.on event finish
+
 Application Flow:
-  ☐ check if connected to internet
+  ✔ check if connected to internet @done (17-04-02 18:45)
 
     If Connected:
-      ☐ make call to qotd api somewhere
-      ☐ parse response as entry
-      ☐ choose random entry in json to remove
-      ☐ update json with new entry
+      ✔ make call to qotd api somewhere @done (17-06-11 13:18)
+        curl -d "format=json&lang=en&method=getQuote" -X POST  http://api.forismatic.com/api/1.0/ | jq .
+      ✔ parse response as entry @done (17-07-03 14:32)
+      ✔ insert quote into a random position in array @done (17-07-06 19:17)
+      ✔ prune array to max if over @done (17-07-06 19:17)
+      ✔ update json with new entry @done (17-07-06 19:17)
 
     If Not Connected:
-      ☐ select entry local json file
+      ✔ select entry local json file @done (17-04-02 19:39)
 
-  ☐ output entry to shell
+  ✔ output entry to shell @done (17-04-02 19:39)
 
 Application Scaffolding:
   ✔ create directory structure @done (17-04-02 17:15)
@@ -29,12 +38,72 @@ Application Scaffolding:
   ✔ git strategy? (master/develop/feature) @done (17-04-02 17:28)
 
 Application Management:
-  ☐ add tests
-  ☐ update readme
-  ☐ add tests
-  ☐ add quotes
-  ☐ add tests
-  ☐ add tests
-  ☐ add tests
-  ☐ add coverage
-  ☐ implement CI/CD
+  ✔ add tests @done (17-04-02 22:24)
+  ✔ update readme @done (17-07-22 17:40)
+    ✔ note on testing to verify json didn't get deleted @done (17-07-22 17:40)
+      - maybe use mock-fs to mock the real json to protect from deletion
+  ✔ add tests @done (17-04-24 22:05)
+  ✔ add quotes @done (17-04-02 22:24)
+  ✔ add tests @done (17-06-18 21:41)
+  ✔ add usage @done (17-04-02 22:24)
+  ✔ add tests @done (17-07-09 21:33)
+  ✔ update usage @done (17-07-11 08:48)
+  ✔ update readme @done (17-07-22 17:40)
+  ✔ update diagram @done (17-07-09 22:58)
+  ✔ add tests @done (17-07-09 21:33)
+  ✔ add coverage @done (17-04-24 13:10)
+  ✘ implement CD @cancelled (17-07-22 17:46)
+  ☐ implement CI
+
+Ideas:
+  ☐ implement messaging system to allow messages to linger for a time period
+    - makes the messages readable - 1000ms
+
+add to help:
+ ✔ Current Upper Limit of Quotes: {MAX} @done (17-07-11 08:48)
+ ✔ Current Number of Quotes:      {LENGTH} @done (17-07-11 08:48)
+
+refactor:
+  ✘ fetchQuote @cancelled (17-07-09 21:30)
+    has an inner promise that is proving difficult to test
+    @note- this may be unavoidable
+
+  ✔ checkonline > checkOnlineHandler @done (17-07-04 19:25)
+    better usage with async try/catch
+  ✔ uncomment writeUpdate method @done (17-07-04 19:32)
+  ✔ prepOutputJson @done (17-07-06 19:18)
+     ✔ using quotesLengthComparator to handle length/prune checks @done (17-07-06 08:45)
+     ✔ handle max update and no new quote in update @done (17-07-06 09:01)
+  ✔ writeUpdate tests no longer need to handle output tests - in prepOutputJson @done (17-07-06 19:41)
+
+Tests TODO:
+  ☐ e2e/integration
+  ☐ functional
+  ✔ setUpdate @done (17-07-04 18:27)
+  ✔ checkOnline refactor @done (17-07-04 19:44)
+  ✔ onlineFailSafe @done (17-07-04 19:32)
+  ✔ prepOutputJson @done (17-07-06 19:18)
+    ✔ instance check @done (17-07-06 09:02)
+    ✔ throws @done (17-07-06 09:02)
+    ✔ expected schema @done (17-07-06 09:03)
+    ✔ calls comparator @done (17-07-06 09:04)
+    ✔ doesn't call comparator @done (17-07-06 09:04)
+    ✔ max set @done (17-07-06 19:18)
+    ✔ max not set @done (17-07-06 19:18)
+    ✔ comparator = 0 @done (17-07-06 19:18)
+    ✔ comparator < 0 @done (17-07-06 19:18)
+    ✔ comparator > 0 @done (17-07-06 19:18)
+  ✘ checkThreshold @cancelled (17-07-04 20:20)
+  ✔ fetchQuote @done (17-07-09 21:29)
+
+Roadmap:
+  Release milestones
+  v1: 
+    functional app, styled appropriately. current feature set locked.
+  v2: 
+    add messaging system to handle queue of messages so each loading message is readable
+  vbeyond:
+    ??? e2e testing
+    ??? ci pipelines
+    ??? maybe type the quote objects floating around
+    ??? api and schema as params
