@@ -1,0 +1,18 @@
+image: node:12.18.0
+
+before_script:
+  - yarn
+
+cache:
+  paths:
+    - node_modules/
+
+test:lint:
+  script:
+    - yarn run lint
+  coverage: /((?:no|\d*) problem(?:s*))/
+
+test:coverage:
+  script:
+    - yarn run coverage
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/

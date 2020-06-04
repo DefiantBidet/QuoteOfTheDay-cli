@@ -95,9 +95,9 @@ qotd -x
 The `version` option outputs the current `qotd` version and exits.
 
 ```bash
-qotd --offline
+qotd --version
 # or
-qotd -x
+qotd -v
 
 # outputs:
 qotd:

@@ -1,6 +1,6 @@
 {
   "name": "qotd",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "James Dean \"DefiantBidet\"",
   "main": "./lib/cli.js",
@@ -11,9 +11,10 @@
     "cli"
   ],
   "scripts": {
+    "lint": "eslint -c .eslintrc -f visualstudio ./lib/",
     "test": "NODE_ENV=test ava -v",
     "test:watch": "NODE_ENV=test ava -wv",
-    "coverage": "NODE_ENV=test nyc --reporter=lcov npm test",
+    "coverage": "NODE_ENV=test nyc --reporter=lcov yarn test && nyc report",
     "covReport": "nyc report"
   },
   "ava": {
@@ -31,21 +32,21 @@
     "./lib/quotes.json"
   ],
   "devDependencies": {
-    "ava": "^0.18.2",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.1.2",
-    "eslint-plugin-import": "^2.2.0",
-    "mock-require": "^2.0.2",
-    "nock": "^9.0.13",
-    "nyc": "^10.2.0",
-    "proxyquire": "^1.7.11",
-    "sinon": "^2.1.0"
+    "ava": "3.8.2",
+    "eslint": "7.1.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2",
+    "mock-require": "3.0.3",
+    "nock": "12.0.3",
+    "nyc": "15.1.0",
+    "proxyquire": "2.1.3",
+    "sinon": "9.0.2"
   },
   "dependencies": {
-    "chalk": "^1.1.3",
-    "cli-spinners": "^1.0.0",
-    "is-online": "^7.0.0",
-    "ora": "^1.2.0",
-    "yargs": "^7.1.0"
+    "chalk": "4.0.0",
+    "cli-spinners": "2.3.0",
+    "is-online": "8.4.0",
+    "ora": "4.0.4",
+    "yargs": "15.3.1"
   }
 }

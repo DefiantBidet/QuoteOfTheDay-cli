@@ -4,7 +4,8 @@ project.
 
 Blocking:
  ✔ JSON gets deleted! @critical @done (17-07-22 17:35)
- ☐ end 2 end / functional tests @high
+ ☐ E2E tests @high
+ ✘ functional tests @low @cancelled (17-07-22 20:35)
  ☐ untested lines in qotd.js @low
    ☐ error of http.responseClient
    ☐ writestream.on event finish
@@ -41,7 +42,7 @@ Application Management:
   ✔ add tests @done (17-04-02 22:24)
   ✔ update readme @done (17-07-22 17:40)
     ✔ note on testing to verify json didn't get deleted @done (17-07-22 17:40)
-      - maybe use mock-fs to mock the real json to protect from deletion
+       ✘ maybe use mock-fs to mock the real json to protect from deletion @cancelled (17-07-22 17:58)
   ✔ add tests @done (17-04-24 22:05)
   ✔ add quotes @done (17-04-02 22:24)
   ✔ add tests @done (17-06-18 21:41)
@@ -55,10 +56,14 @@ Application Management:
   ✘ implement CD @cancelled (17-07-22 17:46)
   ☐ implement CI
 
+CI:
+  ✔ lint @featureBranches @done (17-07-22 19:22)
+  ✔ unit tests @featureBranches @done (17-07-22 19:22)
+  ☐ e2e tests in various node versions @master
+
 Ideas:
   ☐ implement messaging system to allow messages to linger for a time period
     - makes the messages readable - 1000ms
-
 add to help:
  ✔ Current Upper Limit of Quotes: {MAX} @done (17-07-11 08:48)
  ✔ Current Number of Quotes:      {LENGTH} @done (17-07-11 08:48)
@@ -78,7 +83,7 @@ refactor:
 
 Tests TODO:
   ☐ e2e/integration
-  ☐ functional
+  ✘ functional @cancelled (17-07-22 20:35)
   ✔ setUpdate @done (17-07-04 18:27)
   ✔ checkOnline refactor @done (17-07-04 19:44)
   ✔ onlineFailSafe @done (17-07-04 19:32)
